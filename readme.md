@@ -4,9 +4,9 @@
 3. stylus loader
 4. jade loader
 5. config.resolve
+6. source maps
 
 # todo
-* config.devtool: source-map
 * react & components
 
 [0]:http://webpack.github.io/docs/tutorials/getting-started

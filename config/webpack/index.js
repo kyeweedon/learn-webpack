@@ -1,52 +1,54 @@
 
 // kye
 
-module.exports = function(env) {
+module.exports = function(env) { return {
 
-	return {
+	output:{
 
-		output:{
+		filename:"index.js"
 
-			filename:"index.js"
+	},
+	module:{
 
-		},
-		module:{
+		loaders:[
 
-			loaders:[
+			{
 
-				{
+				test:/\.jade$/,
+				loader:"jade"
 
-					test:/\.jade$/,
-					loader:"jade"
+			},
+			{
 
-				},
-				{
+				test:/\.css$/,
+				loader:"style!css"
 
-					test:/\.css$/,
-					loader:"style!css"
+			},
+			{
 
-				},
-				{
+				test:/\.styl$/,
+				loader:"style!css!stylus"
 
-					test:/\.styl$/,
-					loader:"style!css!stylus"
+			}
 
-				}
+		]
 
-			]
+	},
+	resolve:{
 
-		},
-		resolve:{
+		modulesDirectories:[
 
-			modulesDirectories:[
+			"src/"
 
-				"src/"
+		],
+		extensions:["", ".js", ".json", ".styl"]
 
-			],
-			extensions:["", ".js", ".json", ".styl"]
+	},
+	devtool:function() {
 
-		}
+		if(env === "dev") return "#inline-source-map"
+		else return null
 
-	}
+	}()
 
-}
+}}
