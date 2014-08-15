@@ -38,7 +38,12 @@ module.exports = function(env) {
 		},
 		resolve:{
 
-			extensions:["", ".js", ".json"]
+			modulesDirectories:[
+
+				"src/"
+
+			],
+			extensions:["", ".js", ".json", ".styl"]
 
 		}
 

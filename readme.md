@@ -3,9 +3,9 @@
 2. [usage with gulp, gulp-webpack][1]
 3. stylus loader
 4. jade loader
+5. config.resolve
 
 # todo
-* config.resolve[alias, modulesDirectory, extensions]
 * config.devtool: source-map
 * react & components
 

@@ -50,9 +50,6 @@
 	__webpack_require__(2)
 	document.write(__webpack_require__(1))
 
-	//require("styles/home")
-	//document.write(require("views/home")())
-
 
 /***/ },
 /* 1 */
