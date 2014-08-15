@@ -1,7 +1,8 @@
 
 // kye
 
-module.exports = function(env) { return {
+var webpack = require("webpack")
+var config = {
 
 	output:{
 
@@ -29,6 +30,12 @@ module.exports = function(env) { return {
 				test:/\.styl$/,
 				loader:"style!css!stylus"
 
+			},
+			{
+
+				test:/\.jsx$/,
+				loader:"jsx-loader?insertPragma=React.DOM"
+
 			}
 
 		]
@@ -38,17 +45,37 @@ module.exports = function(env) { return {
 
 		modulesDirectories:[
 
-			"src/"
+			"src/",
+			"node_modules/"
 
 		],
-		extensions:["", ".js", ".json", ".styl"]
+		extensions:["", ".js", ".json", ".styl", ".jsx"]
 
 	},
-	devtool:function() {
+	devtool:null,
+	plugins:[]
 
-		if(env === "dev") return "#inline-source-map"
-		else return null
+}
 
-	}()
+module.exports = function(env) {
 
-}}
+	if(env === "dev") {
+
+		config.devtool = "#inline-source-map"
+
+	}
+
+	if(env === "pro") {
+
+		config.plugins.push(
+
+			new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.UglifyJsPlugin(require("../uglify"))
+
+		)
+
+	}
+
+	return config
+
+}

@@ -1,8 +1,8 @@
 
 // kye
+var env = "pro"
 
-var config = require("./config")("dev")
-
+var config = require("./config")(env)
 var gulp = require("gulp")
 var jade = require("gulp-jade")
 var webpack = require("gulp-webpack")

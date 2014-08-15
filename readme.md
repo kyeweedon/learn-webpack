@@ -5,9 +5,7 @@
 4. jade loader
 5. config.resolve
 6. source maps
-
-# todo
-* react & components
+7. react & jsx loader
 
 [0]:http://webpack.github.io/docs/tutorials/getting-started
 [1]:http://webpack.github.io/docs/usage-with-gulp
