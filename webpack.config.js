@@ -3,7 +3,6 @@
 
 module.exports = {
 
-	entry:"./src/entry.js",
 	output:{
 
 		filename:"bundle.js"
@@ -18,9 +17,20 @@ module.exports = {
 				test:/\.css$/,
 				loader:"style!css"
 
+			},
+			{
+
+				test:/\.styl$/,
+				loader:"style!css!stylus"
+
 			}
 
 		]
+
+	},
+	resolve:{
+
+		extensions:["", ".js", ".json"]
 
 	}
 

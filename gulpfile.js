@@ -17,7 +17,7 @@ gulp.task("dev", ["pack"], function(cb) {
 
 gulp.task("pack", function(cb) {
 
-	return gulp.src("src/entry.js")
+	return gulp.src("src/app.js")
 	.pipe(webpack(config.webpack))
 	.pipe(gulp.dest("dist/"))
 

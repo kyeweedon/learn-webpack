@@ -58,7 +58,7 @@
 	
 	// kye
 
-	module.exports = "Imported from content.js"
+	module.exports = "Imported from content/index.js"
 
 
 /***/ },
@@ -80,7 +80,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
-		"\n/* kye */\n\nbody {\n\n\tcolor:white;\n\tbackground:black;\n\n}\n";
+		"body {\n  background: #000;\n  color: #fff;\n}\n";
 
 /***/ },
 /* 4 */
