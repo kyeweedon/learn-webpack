@@ -1,24 +1,31 @@
 
 // kye
 
+var config = require("./config")("dev")
+
 var gulp = require("gulp")
+var jade = require("gulp-jade")
 var webpack = require("gulp-webpack")
-var config = {
 
-	webpack:require("./webpack.config.js")
-
-}
-
-gulp.task("dev", ["pack"], function(cb) {
+gulp.task("dev", ["index", "pack"], function() {
 
 	gulp.watch("src/**/*", ["pack"])
+	gulp.watch("src/views/index.jade", ["index"])
 
 })
 
-gulp.task("pack", function(cb) {
+gulp.task("pack", function() {
 
 	return gulp.src("src/app.js")
 	.pipe(webpack(config.webpack))
+	.pipe(gulp.dest("dist/"))
+
+})
+
+gulp.task("index", function() {
+
+	return gulp.src("src/views/index.jade")
+	.pipe(jade(config.jade))
 	.pipe(gulp.dest("dist/"))
 
 })
